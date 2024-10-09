@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CRUD OPERATION </title>
+            <link rel="stylesheet" href="./css/all.min.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+ <!-- <script>
+
+    window.alert("Hello Internal")
+ </script> -->
+
+</head>
+<body>
+    
+    <main class="w-75  mx-auto  mt-4">
+
+        <section class=" bg-info p-3" >
+            <div class="inputs-form mb-2">
+                <label for="productName"> ProductName </label>
+      <input oninput="nameValidation()" type="text" class="form-control " id="productName" placeholder="productName">
+ <p id="warn" class="alert alert-danger d-none"> Name length must be (3-9) charecter and start with capital one     </p>
+    </div>
+            <div class="inputs-form mb-2">
+                <label for="productPrice"> ProductPrice </label>
+                <input oninput="priceValidation()" type="number" class="form-control" id="productPrice" placeholder="productPrice">
+    <p id="PriceWarn" class="alert alert-danger d-none"> Price Must be less than 20000 </p>
+               
+            </div>
+
+            <div class="inputs-form mb-2">
+                <label for="productCategory"> ProductCategory </label>
+                <input oninput="catValidation()" type="text" class="form-control" id="productCategory" placeholder="productCategory">
+                <p id="catWarn" class="alert alert-danger d-none">  category name length must be (3-9) charecter and start with capital one </p>
+
+            </div>
+            <div class="inputs-form mb-2">
+         <label for="productDescription"> ProductDescription </label>
+        <textarea oninput="descValidation()" class="form-control" id="productDescription" placeholder="productDescription"></textarea>
+        <p id="descWarn" class="alert alert-danger d-none">the discription of the product length must be (from 20 - to 1000) charecter. </p>
+
+            </div>
+         <button id="addBtn" onclick="add()" class="btn btn-primary w-100">Add Product</button>
+         <button id="updateBtn" onclick="update()" class="btn btn-primary w-100 d-none">Update Product</button>
+        </section>
+        <input id="searchInput" type="text" class="form-control my-3 w-50 mx-auto" placeholder="Search" oninput="search()">
+
+        <section class=" bg-danger mt-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableData">
+                    </tbody>
+
+                </table>
+        </section>
+
+    </main>
+           
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
