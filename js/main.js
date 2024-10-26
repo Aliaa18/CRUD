@@ -95,6 +95,10 @@ var warn = document.getElementById('warn')
           productCategoryInput.value=""
           productPriceInput.value=""
           productDescriptionInput.value=""
+          productNameInput.classList.remove('is-valid')
+          productCategoryInput.classList.remove('is-valid')
+          productPriceInput.classList.remove('is-valid')
+          productDescriptionInput.classList.remove('is-valid')
           }
 
           function setData(index){
@@ -133,7 +137,7 @@ var warn = document.getElementById('warn')
           function nameValidation(){
             var warn = document.getElementById('warn')
                    var text = productNameInput.value
-                   var regexName =/^[A-Z][a-z]{2,8}$/
+                   var regexName =/^[A-Z][a-z]{3,8}$/
                         if(regexName.test(text)==true){
                    productNameInput.classList.add('is-valid')
                    productNameInput.classList.remove('is-invalid')
@@ -180,7 +184,7 @@ var warn = document.getElementById('warn')
           function descValidation(){
             var descWarn=document.getElementById('descWarn')
             var text = productDescriptionInput.value
-            var regexName =/^[A-z]{20,1000}$/
+            var regexName =/^[^]{20,1000}$/
                  if(regexName.test(text)==true){
             productDescriptionInput.classList.add('is-valid')
             productDescriptionInput.classList.remove('is-invalid')
